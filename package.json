@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/raajshekhar/CBSC/issues"
   },
-  "homepage": "https://github.com/raajshekhar/CBSC#readme"
+  "homepage": "https://github.com/raajshekhar/CBSC#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }

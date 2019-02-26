@@ -4,7 +4,8 @@ const hostname = "127.0.0.1"; //  ipAddress
 const port = 3002;
 
 const server = http.createServer((req, res) => {
-  // statusCode + contnetType >>>> res.writeHead(200, { "Content-Type", "text/plain" }): check in response header in browser
+  // ? statusCode + contnetType >>>> res.writeHead(200, { "Content-Type", "text/plain" }): check in response header in browser
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/html");
   res.setHeader("httpVersion", req.httpVersion);
