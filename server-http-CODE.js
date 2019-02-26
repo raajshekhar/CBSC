@@ -9,6 +9,7 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/html");
   res.setHeader("httpVersion", req.httpVersion);
+  res.setHeader("status", req.connection);
   stream.steamingFile("./topics/serving-html.html").pipe(res);
 
   //res.end("Hello World\n");

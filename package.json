@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/raajshekhar/CBSC#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
   }
 }
