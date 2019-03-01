@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nodejs</title>
+  </head>
+  <body>
+    <h1><%= query.name %></h1>
+    <form id="contact-form" method="post" action="/contact">
+      <label for="who"> Who do you want to contact </label>
+      <input type="text" name="who" id="who" value="<%= query.person %>" />
+
+      <label for="department"> Which department </label>
+      <input
+        type="text"
+        name="department"
+        id="department"
+        value="<%= query.dept %>"
+      />
+
+      <label for="email"> Your email </label>
+      <input type="email" name="email" id="email" value="<%= query.mail %>" />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

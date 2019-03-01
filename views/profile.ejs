@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="shortcut icon"
+      href="https://yt3.ggpht.com/-BcBNZev-LU8/AAAAAAAAAAI/AAAAAAAAAAA/kyezv2xYQT4/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    <h1>The Nodejs is runtime envinorment. Profile Name is <%= person %></h1>
+    <p><strong> Age: <%= data.age %> </strong></p>
+    <p><strong> Job: <%= data.job %> </strong></p>
+    <h2>Hobbies</h2>
+    <ul>
+      <% data.hobbies.forEach(function(item){ %>
+      <li><%= item %></li>
+      <% }) %>
+    </ul>
+    <% include partials/footer.ejs %>
+  </body>
+</html>

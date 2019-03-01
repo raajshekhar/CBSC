@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Post Method</title>
+    <link href="/todo/assets/style.css" rel="stylesheet" type="text/css" />
+    <script src="/todo/js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="todo-table">
+      <form>
+        <input type="text" name="item" placeholder="Add New Item.." required />
+        <button type="submit">Add Item</button>
+      </form>
+      <ul>
+        <% for(var i= 0; i < todos.length; i++) { %>
+        <li><%= todos[i].item %></li>
+        <% };%>
+      </ul>
+    </div>
+    <script>
+      $(document).ready(() => {
+        $("form").submit(e => {
+          e.preventDefault();
+          var item = $("form input");
+          var todo = { item: item.val() };
+          $.ajax({
+            method: "POST",
+            url: "/todo",
+            data: todo,
+            success: function(data) {
+              location.reload();
+            }
+          });
+        }); // Handling the submit
+
+        $("ul li").on("click", function(e) {
+          var item = $(this)
+            .text()
+            .replace(/ /g, "-");
+          console.log(item);
+          $.ajax({
+            method: "DELETE",
+            url: "/todo/" + item,
+            success: function(data) {
+              location.reload();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
